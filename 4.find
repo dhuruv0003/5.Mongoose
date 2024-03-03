@@ -1,0 +1,26 @@
+1   .find() fucntion return a query object. Though this object is not a promise object but then also we can use .then() function along with it.
+
+    User.find({}).then((res)=>{
+        console.log(res)
+    }).catch((err)=>{
+        console.log(err);
+    })
+
+2.  findOne() method=>  if we want only single user then we use .findOne() method
+
+     User.findOne({age:{$lte:23}}).then((res)=>{
+        console.log(res)
+     })
+     .catch((err)=>
+     {
+         console.log(err);
+     })
+
+3.  .findById() method=>    In javascript we fetches the socument with the help of id(primary Key) associated with it.
+So to use it we use .findById(). 
+
+    User.findById('65e44dab3ee45436d19945f1').then((res)=>{
+         console.log(res)
+     }).catch((err)=>{
+         console.log(err)
+     })

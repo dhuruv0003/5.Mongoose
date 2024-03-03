@@ -1,0 +1,19 @@
+1.  MOdel in mongoose is a class or blueprint with which we construct documents.
+
+2.  Models are responsible for creating and reading documents from the underlying MongoDB database..
+
+3.  An instance/object of a model/class is called a document. Creating them and saving to the database is easy.
+
+4.  const User=mongoose.model("User",userSchema)
+
+5.  here user is name of the model and "user" is name of collection.
+By conventions we write name of both same.
+
+6.. (Line 23 server.js)    const User=mongoose.model("User",userSchema) 
+
+  the above line will create a collection named users in database.
+    test> show collections
+    users.
+Note :- In MongoDb if we give model name User the it converts it into users,
+~ Product is changes to products
+~ Dhuruv is changed into dhuruvs

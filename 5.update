@@ -1,0 +1,40 @@
+Update
+
+1.  User.updateOne(<filter>,<new update>,<options>)
+    Update only a single document
+
+2.  User.updateMany(<filter>,<new update>,<options>)
+    Update multiple 
+    eg=>
+
+        User.updateMany({age:{$gt:40}},{age:45})
+        .then((res)=>console.log(res))
+        .catch((err)=>console.log(err))
+
+documents based on the filters
+O/P syntax->
+{
+            acknowledged: true,
+             modifiedCount: 1,
+             upsertedId: null,
+             upsertedCount: 0,
+             matchedCount: 1
+}
+
+Imp note :- Here we are not getting the proper output, so to this we need to user find and update method. 
+
+3.  User.findByIdAndUpdate()   =>  This function will find the user and update the properties of the user.
+
+    here we get the proper o/p rather than the acjknowledgement. But still in the output we get the previous result, i.e the reult before updating the document.
+
+    So to resolve this we use new option which is by defaultfalse , but we make it true.
+
+        User.findOneAndUpdate({ age : {$lt:25}} , { age:69 } , { new:true }). then((res) => {
+            console.log(res)
+        }).catch((err)=>{
+            console.log(err)
+        })
+
+4.  User.findOneAndUpdate()
+
+    syntax => User.findByIdAndUpdate(id,{update},new:true).then().catch()

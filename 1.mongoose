@@ -1,0 +1,7 @@
+    Mongoose=>
+
+    A library that creates a connection between MongoDB and Node.Js JavaScript Runtime Environment.
+
+    It is an ODM(Object Data Modelling) Library
+
+    cd C:\Users\dhruv\Downloads\mongosh-2.1.4-win32-x64\bin
